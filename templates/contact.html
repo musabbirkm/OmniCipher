@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --secondary: #00C9A7;
+      --dark: #2D2D44;
+      --light: #F6F6F9;
+      --gradient: linear-gradient(135deg, #6C63FF 0%, #00C9A7 100%);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .contact-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    }
+    .contact-info {
+      padding-right: 2rem;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .contact-methods {
+      margin-top: 2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      background: rgba(108, 99, 255, 0.05);
+    }
+    .contact-item:hover {
+      transform: translateX(10px);
+      background: rgba(108, 99, 255, 0.1);
+    }
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      transition: all 0.3s ease;
+    }
+    .social-link:hover {
+      background: var(--gradient);
+      color: white;
+      transform: translateY(-3px);
+    }
+    .contact-form {
+      position: relative;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    }
+    button[type="submit"] {
+      background: var(--gradient);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .status-message {
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
+      align-items: center;
+      gap: 1rem;
+    }
+    .status-message.success {
+      background: #e3fcef;
+      color: #00a67c;
+      border: 2px solid #00a67c;
+    }
+    .status-message.error {
+      background: #ffe3e3;
+      color: #ff4444;
+      border: 2px solid #ff4444;
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        width:100%;
+        margin: .5rem .5rem;
+        padding: 1rem;
+      }
+      .contact-info {
+        padding-right: 0;
+      }
+      .section-title {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .social-links {
+        justify-content: center;
+      }
+      input,
+      textarea {
+        font-size: 0.9rem;
+      }
+      button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate {
+      animation: fadeIn 0.6s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container animate">
+    <div class="contact-info">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-methods">
+        <div class="contact-item animate">
+          <div class="contact-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <h3>Musabbir Km</h3>
+          </div>
+        </div>
+        <div class="contact-item animate">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <p>𝘰𝘮𝘯𝘪𝘤𝘪𝘱𝘩𝘦𝘳@𝘱𝘳𝘰𝘵𝘰𝘯.𝘮𝘦</p>
+          </div>
+        </div>
+        <div class="contact-item animate">
+          <div class="contact-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <p>+918590987368</p>
+          </div>
+        </div>
+        <div class="social-links">
+                    <a href="https://www.facebook.com/share/18z5XCuZoE/" class="social-link animate">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/msbr_mummd?igsh=MWNveWRybG95OWM3aw==" class="social-link animate">
+                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/musabbirkm" class="social-link animate">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://huggingface.co/Musabbirkm" class="social-link animate">
+                        <i class="fab fa-hackerrank"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammed-musabbir-km-0302b8212" class="social-link animate">
+                         <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/Musabbir_km" class="social-link animate">
+                        <i class="fa-solid fa-x"></i>
+                    </a>
+        </div>
+      </div>
+    </div>
+    <form id="contactForm" method="POST">
+        {% csrf_token %}
+        <div class="form-group animate">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group animate">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group animate">
+            <input type="text" id="number" name="number" placeholder="Your Number" required>
+        </div>
+        <div class="form-group animate">
+            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <div id="responseMessage"></div>
+    </form>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#contactForm").submit(function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                var formData = {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    number: $("#number").val(),
+                    message: $("#message").val(),
+                    csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'contact' %}",
+                    data: formData,
+                    dataType: "json",
+                    success: function (response) {
+                        $("#responseMessage").html(
+                            "<p style='color: green;'>" + response.message + "</p>"
+                        );
+                        $("#contactForm")[0].reset(); // Clear form fields
+                    },
+                    error: function () {
+                        $("#responseMessage").html(
+                            "<p style='color: red;'>Error submitting the form.</p>"
+                        );
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

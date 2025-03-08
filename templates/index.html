@@ -1,0 +1,839 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full-stack Developer, Cybersecurity Expert, AI & ML Enthusiast, Ethical Hacker & Innovator in Tech.">
+  <meta name="keywords" content="AI Developer, Machine Learning, Python, Web Development, Cyber Security, Ethical Hacking, Portfolio">
+  <meta name="author" content="Musabbir">
+  <title>𝕆𝕞𝕟𝕚ℂ𝕚𝐩𝐡𝐞𝐫 - Innovator in Tech & Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --secondary-color: #ff6b6b;
+      --nav-bg: rgba(10, 25, 47, 0.95);
+      --card-bg: #112240;
+      --gradient-bg: linear-gradient(135deg, #64ffda 0%, #6b48ff 100%);
+      --project-bg: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+    }
+    [data-theme="light"] {
+      --bg-color: #f8f9fa;
+      --text-color: #495057;
+      --accent-color: #6b48ff;
+      --secondary-color: #ff6b6b;
+      --nav-bg: rgba(248, 249, 250, 0.95);
+      --card-bg: #ffffff;
+      --gradient-bg: linear-gradient(135deg, #6b48ff 0%, #64ffda 100%);
+      --project-bg: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0.6rem 8%;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+    .logo img {
+      width: 100px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 1rem;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2.5rem;
+      position
+      color: var(--accent-color);
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 120px 8% 50px;
+      background: var(--bg-color);
+      position: relative;
+      min-height: 90vh;
+      margin-bottom: 3rem;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -150px;
+      bottom: -150px;
+      width: 500px;
+      height: 500px;
+      background: var(--gradient-bg);
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      padding-right: 2rem;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      background: var(--gradient-bg);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero-content h2 {
+      font-size: 1.8rem;
+      color: #8892b0;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-content ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-content ul li {
+      margin-bottom: 0.5rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover {
+      background: var(--secondary-color);
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 0 30px rgba(100,255,218,0.3);
+    }
+    .profile-info {
+      position: relative;
+      text-align: center;
+      margin-top: -50px;
+    }
+    .profile-details {
+      margin-top: 1rem;
+    }
+    .profile-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .timeline {
+      padding: 4rem 8%;
+      background: var(--bg-color);
+    }
+    .timeline h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      display: block;
+      margin: 0.5rem auto 0;
+    }
+    .timeline-item {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-left: 4px solid var(--accent-color);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .timeline-item.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #8892b0;
+    }
+    .timeline-item ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+    .timeline-item ul li {
+      margin-bottom: 0.5rem;
+    }
+    .projects {
+      padding: 4rem 8%;
+      background: var(--bg-color);
+    }
+    .projects h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .project-card {
+      background: var(--project-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(100,255,218,0.1);
+      margin-bottom: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .project-card.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(100,255,218,0.1);
+    }
+    .project-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 1.5rem;
+    }
+    .project-content h3 {
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    .project-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #f0f0f0;
+    }
+    .project-tags {
+      margin-bottom: 1rem;
+    }
+    .project-tags span {
+      display: inline-block;
+      background: rgba(100,255,218,0.1);
+      color: var(--accent-color);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+    #contact {
+      padding: 4rem 8%;
+      background: var(--bg-color);
+      text-align: center;
+    }
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    #contact p {
+      margin-bottom: 2rem;
+    }
+    #contact a {
+      padding: 0.8rem 1.5rem;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    #contact a:hover {
+      background: var(--secondary-color);
+    }
+    .chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: translateY(150%);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    .chat-container.active {
+      transform: translateY(0);
+    }
+    .chat-header {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      padding: 1rem;
+      border-radius: 15px 15px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .close-btn {
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .close-btn:hover {
+      transform: scale(1.2);
+    }
+    .chat-messages {
+      height: 400px;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    .bot-message, .user-message {
+      margin: 1rem 0;
+      display: flex;
+    }
+    .user-message {
+      justify-content: flex-end;
+    }
+    .message-content {
+      max-width: 80%;
+      padding: 0.8rem;
+      border-radius: 15px;
+      background: var(--nav-bg);
+      position: relative;
+    }
+    .bot-message .message-content {
+      background: var(--card-bg);
+    }
+    .quick-questions {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .quick-question {
+      background: rgba(100,255,218,0.1);
+      border: none;
+      color: var(--accent-color);
+      padding: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .quick-question:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+    .chat-input {
+      display: flex;
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid var(--accent-color);
+      border-radius: 25px;
+      background: transparent;
+      color: var(--text-color);
+    }
+    .send-btn {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .send-btn:hover {
+      transform: scale(1.1);
+    }
+    .chat-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(100,255,218,0.3);
+      transition: transform 0.3s;
+      z-index: 1000;
+    }
+    .chat-toggle:hover {
+      transform: scale(1.1) rotate(15deg);
+    }
+    footer {
+      background: var(--card-bg);
+      padding: 1rem 3%;
+      text-align: center;
+    }
+    footer h3 {
+      margin-bottom: 1rem;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #8892b0;
+    }
+
+    @media (max-width: 768px) {
+    .navbar {
+    padding: 0.6rem 2%;
+    position: relative;
+    }
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      color:rgb(0, 204, 255);
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--nav-bg);
+      position: absolute;
+      top: 60px;
+      right: 5%;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+    .nav-toggle {
+      display: block;
+    }
+
+    .hero {
+      flex-direction: column;
+      padding: 80px 5% 30px;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-content {
+      order: 2;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .hero-image {
+      order: 1;
+      margin-bottom: 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-content h2 {
+      font-size: 1.4rem;
+    }
+    .cta-btn {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+    .hero-image img {
+      width: 250px;
+      height: 250px;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      <img src="{% static 'logo4.PNG' %}" alt="OmniCipher Logo">
+      𝐎𝐦𝐧𝐢𝐂𝐢𝐩𝐡𝐞𝐫
+    </a>
+    <button class="nav-toggle" aria-label="Toggle Navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links">
+      <a href=""><i class="fa-solid fa-house"></i> Home</a>
+      <a href="/projects"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="/about"><i class="fa-solid fa-info"></i> About</a>
+      <a href="/contact"><i class="fa-solid fa-address-book"></i> Contact</a>
+      <a href="/blogs"><i class="fa-solid fa-blog"></i> Blogs</a>
+      <a href="/services"><i class="fa-brands fa-servicestack"></i> Services</a>
+      <button id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode">☾</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-image">
+      <div class="profile-info">
+        <img src="{% static 'profile.jpg' %}" alt="Musabbir">
+        <div class="profile-details">
+          <h3>𝐌𝐮𝐬𝐚𝐛𝐛𝐢𝐫 𝐊𝐦</h3>
+          <p>𝘰𝘮𝘯𝘪𝘤𝘪𝘱𝘩𝘦𝘳@𝘱𝘳𝘰𝘵𝘰𝘯.𝘮𝘦</p>
+          <div class="profile-social">
+            <a href="https://www.facebook.com/share/18z5XCuZoE/" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/msbr_mummd?igsh=MWNveWRybG95OWM3aw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/musabbirkm" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://huggingface.co/Musabbirkm" title="Hugging Face"><i class="fab fa-hackerrank"></i></a>
+            <a href="https://www.linkedin.com/in/muhammed-musabbir-km-0302b8212" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/Musabbir_km" title="X"><i class="fa-solid fa-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1>𝔻𝕚𝕘𝕚𝕥𝕒𝕝 𝕀𝕟𝕟𝕠𝕧𝕒𝕥𝕠𝕣 &amp; 𝕊𝕖𝕔𝕦𝕣𝕚𝕥𝕪 𝔾𝕦𝕒𝕣𝕕𝕚𝕒𝕟</h1>
+      <h2>AI Engineer | Full Stack Developer | Ethical Hacker | Tech Enthusiast</h2>
+      <p>
+        With a passion for blending advanced technology with uncompromised security, I build full-stack applications, deploy AI-driven systems, and implement robust cybersecurity measures.
+      </p>
+      <ul>
+        <li>Expert in Python, AI/ML, and web development</li>
+        <li>Proven track record in cybersecurity and ethical hacking</li>
+        <li>Innovator delivering cutting-edge digital solutions</li>
+      </ul>
+      <a href="/contact" class="cta-btn">Hire Me <i class="fas fa-hand-pointer"></i></a>
+    </div>
+  </section>
+
+  <section class="timeline" id="experience">
+    <h2>Independent Innovations</h2>
+    <div class="timeline-item">
+       <h3>Diverse Projects &amp; Cutting-Edge Solutions</h3>
+        <p>
+          I have spearheaded projects across various domains including web &amp; mobile app development, AI program design, cybersecurity, and ethical hacking.
+        </p>
+        <ul>
+          <li>Bespoke Web &amp; Mobile Applications tailored for unique business needs.</li>
+          <li>Advanced AI Systems for Automation &amp; Data Analysis improving efficiency by up to 50%.</li>
+          <li>Comprehensive Cybersecurity Assessments &amp; Secure Implementation to safeguard sensitive data.</li>
+          <li>Ethical Hacking to Uncover &amp; Mitigate Vulnerabilities before they become threats.</li>
+        </ul>
+    </div>
+    <div class="timeline-item">
+      <h3>Innovative AI &amp; Machine Learning Projects</h3>
+      <p>
+        Leveraging state-of-the-art machine learning techniques, I developed predictive models and intelligent automation systems that drive decision-making and efficiency.
+      </p>
+      <ul>
+          <li>Created real-time threat detection systems using deep neural networks.</li>
+          <li>Developed NLP solutions for enhanced customer service automation.</li>
+          <li>Integrated AI into business intelligence tools to enable data-driven strategies.</li>
+          <li>Collaborated with research teams to explore novel ML applications.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <h3>Cybersecurity Milestones</h3>
+      <p>
+        My focus on security has led to significant improvements in vulnerability management and the development of robust defense mechanisms.
+      </p>
+      <ul>
+        <li>Led multiple security audits resulting in a 30% improvement in vulnerability remediation.</li>
+        <li>Designed custom security frameworks for enterprise-level applications.</li>
+        <li>Conducted rigorous penetration tests to expose and fix system vulnerabilities.</li>
+        <li>Provided expert cybersecurity consultations and training sessions.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <h3>Full-Stack Development Excellence</h3>
+      <p>
+        Delivering comprehensive development solutions by integrating modern front-end frameworks with powerful back-end architectures.
+      </p>
+      <ul>
+        <li>Architected scalable web applications using Django, Flask, and FastAPI.</li>
+        <li>Implemented responsive and user-centric design principles.</li>
+        <li>Optimized performance through code refactoring and effective database management.</li>
+        <li>Integrated third-party APIs to enhance functionality and user experience.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-card">
+          <img src="{% static 'ai-security.png' %}" alt="NeuralGuard Project" class="project-image">
+          <div class="project-content">
+            <h3>NeuralGuard - AI-Powered Threat Detection</h3>
+            <div class="project-tags">
+                <span>Machine Learning</span>
+                <span>Cybersecurity</span>
+                <span>Python</span>
+                <span>Deep Learning</span>
+            </div>
+            <p>
+              A system blending deep neural networks with behavioral analysis to proactively identify and neutralize zero-day exploits.
+            </p>
+          </div>
+      </div>
+      <div class="project-card">
+          <img src="{% static 'synth.jpg' %}" alt="SynthMind Project" class="project-image">
+          <div class="project-content">
+            <h3>SynthMind - AI Creative Composer</h3>
+            <div class="project-tags">
+                <span>Deep Learning</span>
+                <span>Neural Networks</span>
+                <span>Music Generation</span>
+                <span>Python</span>
+            </div>
+            <p>
+              An AI system that composes original music by analyzing thousands of tracks, generating innovative melodies and harmonies.
+            </p>
+          </div>
+      </div>
+  </section>
+
+  <div class="extra-logo" style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-top:3rem;">
+     <img src="{% static 'logo.PNG' %}" alt="Additional Branding Logo">
+      <p style="max-width:600px; text-align:center; margin-top:1rem; color: var(--text-color);">
+         OmniCipher is an innovative startup dedicated to pioneering advanced cybersecurity solutions powered by AI and robust encryption technologies, ensuring a secure digital future.
+      </p>
+  </div>
+
+  <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Let's collaborate to build a safer, smarter digital world.</p>
+      <a href="/contact"><i class="fa-solid fa-address-book"></i> Get in Touch</a>
+  </section>
+
+  <div class="chat-container">
+    <div class="chat-header">
+        <h4>CyberAssist AI</h4>
+        <span class="close-btn">×</span>
+    </div>
+    <div class="chat-messages">
+        <div class="bot-message">
+            <div class="message-content">
+                🛡️ Welcome! I'm your AI security assistant. How can I help?
+                <div class="quick-questions">
+                    <button class="quick-question">What services do you offer?</button>
+                    <button class="quick-question">Show security certifications</button>
+                    <button class="quick-question">Request consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" placeholder="Type your message...">
+        <button class="send-btn">➤</button>
+    </div>
+  </div>
+  <button class="chat-toggle">
+      <i class="fas fa-robot"></i>
+  </button>
+
+  <footer>
+    <h3>Let's Secure the Digital Future Together</h3>
+    <p>© 2025 𝐎𝐦𝐧𝐢𝐂𝐢𝐩𝐡𝐞𝐫. Champion of Secure Innovation</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script>
+    gsap.from('.hero-content', { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', function(){
+      if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+      } else {
+        navLinks.style.display = "flex";
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.timeline-item, .project-card').forEach(item => {
+        observer.observe(item);
+      });
+    });
+
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function() {
+      if(document.documentElement.getAttribute('data-theme') === 'light'){
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☾';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeToggle.textContent = '☀';
+      }
+    });
+
+    const chatbot = {
+      qna: {
+        "services": {
+          question: "What services do you offer?",
+          answer: "I specialize in:<br>• AI-Powered Cybersecurity Solutions<br>• Full-Stack Development<br>• Ethical Hacking & Pen Testing<br>• Machine Learning Implementation<br>• Secure Mobile Development",
+          followups: ["Which industries?", "Request portfolio"]
+        },
+        "certifications": {
+          question: "Show security certifications",
+          answer: "Current certifications:<br>• Certified Ethical Hacker (CEH)<br>• OSCP<br>• CISSP<br>• AWS Security Specialist<br>• CompTIA Security+",
+          followups: ["View certificates", "Request verification"]
+        },
+        "consultation": {
+          question: "Request consultation",
+          answer: "Great choice! Please provide:<br>1. Your name<br>2. Contact email<br>3. Brief project description<br>I’ll respond within 24 hours.",
+          followups: []
+        },
+        "pricing": {
+          question: "What are your pricing plans?",
+          answer: "We offer competitive and flexible pricing tailored to your project needs. Contact us for a custom quote or explore our detailed pricing plans on the website.",
+          followups: ["Request quote", "View pricing details"]
+        },
+        "tech-stack": {
+          question: "What tech stack do you use?",
+          answer: "Our tech stack includes modern frameworks and languages: Python, Django, Flask, FastAPI for the backend, and React, Next.js for the frontend, ensuring high performance and security.",
+          followups: ["Learn about our projects", "Schedule a consultation"]
+        },
+        "testimonials": {
+          question: "Do you have client testimonials?",
+          answer: "Yes, our clients have shared success stories about our innovative solutions and exceptional service. Check out our portfolio for detailed testimonials and case studies.",
+          followups: ["Read testimonials", "Contact for references"]
+        },
+        "support": {
+          question: "What support services do you offer?",
+          answer: "We provide 24/7 technical support and regular maintenance to ensure your systems remain secure and up-to-date. Our team is always ready to assist with any technical challenges.",
+          followups: ["View support packages", "Request support"]
+        }
+      },
+      init: function() {
+        document.querySelector('.chat-toggle').addEventListener('click', this.toggleChat.bind(this));
+        document.querySelector('.close-btn').addEventListener('click', this.toggleChat.bind(this));
+        document.querySelector('.send-btn').addEventListener('click', this.handleSend.bind(this));
+        document.querySelector('.chat-input input').addEventListener('keypress', (e) => {
+          if(e.key === 'Enter') this.handleSend();
+        });
+        document.querySelectorAll('.quick-question').forEach(btn => {
+          btn.addEventListener('click', (e) => this.handleQuestion(e.target.textContent));
+        });
+      },
+      toggleChat: function() {
+        document.querySelector('.chat-container').classList.toggle('active');
+      },
+      handleSend: function() {
+        const input = document.querySelector('.chat-input input');
+        const message = input.value.trim();
+        if(message) {
+          this.addMessage(message, 'user');
+          this.processQuery(message);
+          input.value = '';
+        }
+      },
+      handleQuestion: function(question) {
+        this.addMessage(question, 'user');
+        this.processQuery(question);
+      },
+      processQuery: function(query) {
+        const normalized = query.toLowerCase();
+        let response = "I'm trained to discuss:<br>• Cybersecurity solutions<br>• Technical certifications<br>• Project consultations<br>• Development services<br>Please ask specific questions!";
+        Object.keys(this.qna).forEach(key => {
+          if(normalized.includes(key)) {
+            response = this.qna[key].answer;
+            if(this.qna[key].followups.length > 0) {
+              response += '<div class="quick-questions">';
+              this.qna[key].followups.forEach(followup => {
+                response += `<button class="quick-question">${followup}</button>`;
+              });
+              response += '</div>';
+            }
+          }
+        });
+        setTimeout(() => {
+          this.addMessage(response, 'bot');
+        }, 1000);
+      },
+      addMessage: function(content, sender) {
+        const messagesDiv = document.querySelector('.chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = sender + '-message';
+        messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
+        messagesDiv.appendChild(messageDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        messageDiv.querySelectorAll('.quick-question').forEach(btn => {
+          btn.addEventListener('click', (e) => this.handleQuestion(e.target.textContent));
+        });
+      }
+    };
+
+    chatbot.init();
+  </script>
+</body>
+</html>

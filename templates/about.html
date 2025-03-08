@@ -1,0 +1,463 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | OmniCipher - Digital Innovation, AI-Powered Security & Cybersecurity Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --secondary: #00C9A7;
+      --dark: #2D2D44;
+      --light: #F6F6F9;
+      --gradient: linear-gradient(135deg, #6C63FF 0%, #00C9A7 100%);
+      --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .profile-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3);
+    }
+    .intro-text {
+      text-align: left;
+      flex: 1;
+      min-width: 280px;
+    }
+    .name {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    .bio {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-link {
+      font-size: 1.5rem;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .skills-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    .skill-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    .skill-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+    }
+    .omnicipher-section {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 4rem 1rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .omnicipher-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .omnicipher-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .omnicipher-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #00C9A7;
+    }
+    .omnicipher-description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .services-grid, .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .service-card, .why-choose-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover, .why-choose-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .service-icon, .why-choose-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #00C9A7, #6C63FF);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .service-card h4, .why-choose-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00C9A7;
+    }
+    .service-card p, .why-choose-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .omnicipher-call-to-action {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .btn-contact-us {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #00C9A7, #6C63FF);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-contact-us:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 201, 167, 0.3);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .intro-text {
+        text-align: center;
+      }
+      .name {
+        font-size: 2.5rem;
+      }
+      .omnicipher-title {
+        font-size: 2rem;
+      }
+      .omnicipher-description {
+        font-size: 1rem;
+      }
+      .service-card, .why-choose-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+      .profile-image {
+        width: 200px;
+        height: 200px;
+      }
+      .name {
+        font-size: 2rem;
+      }
+      .tagline {
+        font-size: 1.2rem;
+      }
+      .bio {
+        font-size: 1rem;
+      }
+      .skill-card {
+        padding: 1.5rem;
+      }
+      .omnicipher-logo {
+        width: 150px;
+      }
+      .omnicipher-title {
+        font-size: 1.8rem;
+      }
+      .omnicipher-description {
+        font-size: 0.9rem;
+      }
+      .service-icon, .why-choose-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      .btn-contact-us {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero animate">
+      <div class="profile-header">
+        <img src="{% static 'logo5.ico' %}" alt="OmniCipher" class="profile-image" />
+        <div class="intro-text">
+          <h1 class="name">𝐎𝐦𝐧𝐢𝐂𝐢𝐩𝐡𝐞𝐫</h1>
+          <p class="tagline">
+            <strong>Digital Innovation | AI-Powered Security | Cybersecurity &amp; Ethical Hacking | Fullstack &amp; Mobile Solutions</strong>
+          </p>
+          <p class="bio">
+            Welcome to OmniCipher, a cutting-edge initiative at the forefront of digital innovation. We combine advanced AI, ethical hacking, and cybersecurity expertise with full-stack and mobile development to deliver state-of-the-art solutions. Our mission is to secure your digital future and empower businesses through technology.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/18z5XCuZoE/" title="Facebook" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/msbr_mummd?igsh=MWNveWRybG95OWM3aw==" title="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/musabbirkm" title="GitHub" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://huggingface.co/Musabbirkm" title="Hugging Face" class="social-link"><i class="fab fa-hackerrank"></i></a>
+            <a href="https://www.linkedin.com/in/muhammed-musabbir-km-0302b8212?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/Musabbir_km?t=1dZoYO6Kx3bXty34YodeUg&s=08" title="X" class="social-link"><i class="fa-solid fa-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <div class="skill-card animate">
+        <div class="skill-title">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Technical Skills</h3>
+        </div>
+        <ul>
+          <li>Python &amp; Django</li>
+          <li>JavaScript (ES6+), React &amp; Node.js</li>
+          <li>Mobile App Development (Flutter, React Native)</li>
+          <li>Machine Learning &amp; AI</li>
+          <li>Cybersecurity &amp; Ethical Hacking</li>
+          <li>Data Science &amp; Analytics</li>
+          <li>Cloud Computing</li>
+          <li>UI/UX Design</li>
+        </ul>
+      </div>
+
+      <div class="skill-card animate">
+        <div class="skill-title">
+          <div class="skill-icon"><i class="fas fa-tools"></i></div>
+          <h3>Tools &amp; Technologies</h3>
+        </div>
+        <ul>
+          <li>Docker &amp; Kubernetes</li>
+          <li>AWS, Google Cloud &amp; Azure</li>
+          <li>Git &amp; GitHub Actions</li>
+          <li>CI/CD Pipelines</li>
+          <li>Testing Frameworks</li>
+          <li>Firebase &amp; RESTful APIs</li>
+          <li>Agile &amp; Scrum Methodologies</li>
+        </ul>
+      </div>
+
+      <div class="skill-card animate">
+        <div class="skill-title">
+          <div class="skill-icon"><i class="fas fa-star"></i></div>
+          <h3>Achievements</h3>
+        </div>
+        <ul>
+          <li>2023 Dev Excellence Award</li>
+          <li>Open Source Contributor</li>
+          <li>Mentored 50+ Developers</li>
+          <li>5K+ GitHub Stars</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="omnicipher-section">
+      <div class="omnicipher-container">
+        <img src="{% static 'logo6.PNG' %}" alt="OmniCipher Logo" class="omnicipher-logo" />
+        <h2 class="omnicipher-title">OmniCipher</h2>
+        <p class="omnicipher-description">
+          OmniCipher is a cutting-edge initiative focused on <strong>AI-powered security, ethical hacking, and cybersecurity solutions</strong>. Our mission is to <strong>redefine digital security</strong> and foster innovation by integrating advanced encryption, AI-driven threat detection, and comprehensive digital transformation strategies.
+        </p>
+
+        <div class="omnicipher-more-info">
+          <h3>Our Core Services</h3>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>AI-Driven Threat Detection &amp; Response</h4>
+              <p>Proactively identify and neutralize cyber threats using advanced AI algorithms.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h4>Advanced Encryption &amp; Data Protection</h4>
+              <p>Secure sensitive data with state-of-the-art encryption technologies.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h4>Comprehensive Penetration Testing</h4>
+              <p>Simulate real-world attacks to uncover and fix vulnerabilities.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h4>Real-Time Cybersecurity Monitoring</h4>
+              <p>Monitor your systems 24/7 to detect and respond to threats instantly.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h4>Custom Security Solutions &amp; Consulting</h4>
+              <p>Tailored strategies to meet your unique business needs.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>Responsive Web Development</h4>
+              <p>Build fast, secure, and scalable web applications for any platform.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4>Innovative Mobile App Development</h4>
+              <p>Create cutting-edge mobile experiences for iOS and Android.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4>Machine Learning &amp; AI Integration</h4>
+              <p>Leverage AI to automate processes and gain actionable insights.</p>
+            </div>
+          </div>
+
+          <h3>Why Choose OmniCipher?</h3>
+          <div class="why-choose-grid">
+            <div class="why-choose-card">
+              <div class="why-choose-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4>Innovative Solutions</h4>
+              <p>State-of-the-art technology combined with deep industry insights.</p>
+            </div>
+            <div class="why-choose-card">
+              <div class="why-choose-icon">
+                <i class="fas fa-shield-virus"></i>
+              </div>
+              <h4>Comprehensive Approach</h4>
+              <p>Safeguarding your digital assets while accelerating your business growth.</p>
+            </div>
+          </div>
+
+          <div class="omnicipher-call-to-action">
+            <a href="/contact" class="btn-contact-us">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

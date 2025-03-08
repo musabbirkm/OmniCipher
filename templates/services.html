@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+{% block title %}IoT & Smart Device Integration{% endblock %}
+{% load static %}
+{% block content %}
+  <title>Our Services & Featured Projects - OmniCipher</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-bg: #112240;
+      --featured-bg: #1a2433;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 0;
+    }
+    /* Section Headings */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-heading h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .section-heading p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #services {
+      padding: 4rem 0;
+      background: var(--bg-color);
+    }
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+    }
+    .service-card .icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    #featured {
+      padding: 4rem 0;
+      background: var(--featured-bg);
+    }
+    .featured-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .featured-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .featured-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+    }
+    .featured-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .featured-card .card-content {
+      padding: 1.5rem;
+    }
+    .featured-card .card-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .featured-card .card-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .featured-card .card-content a {
+      text-decoration: none;
+      color: var(--bg-color);
+      background: var(--accent-color);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+    .featured-card .card-content a:hover {
+      background: #ff6b6b;
+    }
+    @media screen and (max-width: 768px) {
+      .services-container, .featured-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Services</h2>
+        <p>
+          We offer a diverse range of services designed to empower your business with cutting-edge technology and robust security.
+        </p>
+      </div>
+      <div class="services-container">
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>AI-Powered Cybersecurity</h3>
+          <p>
+            Leverage intelligent systems to detect, analyze, and neutralize threats in real time.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h3>Full-Stack Development</h3>
+          <p>
+            Develop robust web and mobile applications using modern frameworks and scalable architectures.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <h3>Ethical Hacking &amp; Pen Testing</h3>
+          <p>
+            Identify and mitigate vulnerabilities through comprehensive security audits and penetration tests.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-robot"></i></div>
+          <h3>Machine Learning Implementation</h3>
+          <p>
+            Integrate intelligent automation and data analytics to optimize your business processes.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Secure Mobile Development</h3>
+          <p>
+            Build mobile applications that prioritize user privacy and data security.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Solutions &amp; DevOps</h3>
+          <p>
+            Improve scalability and efficiency with cloud computing and streamlined DevOps practices.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Data Analytics &amp; Big Data</h3>
+          <p>
+            Unlock actionable insights using advanced data analytics and big data processing.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-network-wired"></i></div>
+          <h3>IoT &amp; Smart Device Integration</h3>
+          <p>
+            Connect and automate devices seamlessly to build a smarter and more efficient ecosystem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Featured Projects</h2>
+        <p>
+          Explore our most innovative projects that showcase our expertise in technology and security.
+        </p>
+      </div>
+      <div class="featured-container">
+
+        <div class="featured-card">
+          <img src="{% static 'ai-security.png' %}" alt="NeuralGuard Project"  style="width: 600px; height: 400px;">
+          <div class="card-content">
+            <h3>NeuralGuard</h3>
+            <p>
+              An AI-driven cybersecurity solution that uses deep learning to detect and mitigate threats.
+            </p>
+            <a href="/projects">Learn More</a>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <img src="{% static 'synth.jpg' %}" alt="SynthMind Project"  style="width: 600px; height: 400px;">
+          <div class="card-content">
+            <h3>SynthMind</h3>
+            <p>
+              A cutting-edge AI system that composes original music by analyzing thousands of tracks.
+            </p>
+            <a href="/projects">Learn More</a>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <img src="{% static 'CyberSentinel.png' %}" alt="Cyber Sentinel Project"  style="width: 600px; height: 400px;">
+          <div class="card-content">
+            <h3>Cyber Sentinel</h3>
+            <p>
+              A robust platform combining ethical hacking and machine learning to secure digital assets.
+            </p>
+            <a href="/projects">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

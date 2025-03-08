@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% block title %}Cloud Solution{% endblock %}
+{% load static %}
+{% block content %}
+<style>
+     :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-bg: #112240;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Dark mode */
+      body[data-theme="dark"] {
+        background-color: #0a192f;
+        color: #ccd6f6;
+      }
+
+      /* Update other elements for dark mode */
+      body[data-theme="dark"] .blog-container {
+        background-color: #112240;
+        color: #ccd6f6;
+      }
+
+      body[data-theme="dark"] .blog-header h1 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] .blog-content h2 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a:hover {
+        color: #ff6b6b;
+      }
+
+      body[data-theme="dark"] .home-button {
+        background-color: #64ffda;
+        color: #0a192f;
+      }
+
+      body[data-theme="dark"] .home-button:hover {
+        background-color: #ff6b6b;
+      }
+      body[data-theme="dark"] .blog-content{
+        color: white;
+      }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #2a2a2a;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2a5c82;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .blog-header h1 {
+      font-size: 2.5rem;
+      color: #2a5c82;
+      margin-bottom: 10px;
+    }
+    .blog-header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .blog-content {
+      font-size: 1.1rem;
+      color: #000000;
+    }
+
+    .blog-content h2 {
+      font-size: 1.8rem;
+      color: #2a5c82;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .blog-content p {
+      margin-bottom: 20px;
+    }
+    .blog-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .blog-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #2a5c82;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .home-button:hover {
+      background: #1e4565;
+    }
+
+    @media (max-width: 768px) {
+      .blog-container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .blog-header h1 {
+        font-size: 2rem;
+      }
+
+      .blog-image {
+        height: 250px;
+      }
+
+      .home-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+
+  <a href="/home" class="home-button">Home</a>
+
+  <div class="blog-container">
+    <div class="blog-header">
+      <h1>Cloud Solutions & DevOps</h1>
+      <p>Published on October 10, 2023 | By Musabbir</p>
+    </div>
+
+    <img src="{% static 'cloud.jpg' %}" alt="Cloud Solutions & DevOps" class="blog-image" style="width: 600px; height: 400px;" />
+
+    <div class="blog-content">
+      <h2>Introduction</h2>
+      <p>
+        The integration of cloud computing with DevOps practices has revolutionized the way organizations develop, deploy, and manage applications. By combining the scalability of the cloud with the efficiency of DevOps, businesses can achieve faster delivery, improved collaboration, and enhanced reliability. In this blog, we'll explore how cloud solutions and DevOps work together to boost scalability and efficiency.
+      </p>
+
+      <h2>1. What is DevOps?</h2>
+      <p>
+        DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and deliver high-quality software continuously. Key principles include automation, continuous integration (CI), continuous delivery (CD), and collaboration.
+      </p>
+
+      <h2>2. The Role of Cloud Computing</h2>
+      <p>
+        Cloud computing provides on-demand access to computing resources, such as servers, storage, and databases, over the internet. It offers scalability, flexibility, and cost-efficiency, making it an ideal platform for DevOps practices.
+      </p>
+
+      <h2>3. Benefits of Integrating Cloud and DevOps</h2>
+      <ul>
+        <li><strong>Scalability:</strong> Cloud platforms allow you to scale resources up or down based on demand, ensuring optimal performance.</li>
+        <li><strong>Automation:</strong> Cloud services enable automation of infrastructure provisioning, configuration, and deployment.</li>
+        <li><strong>Cost Efficiency:</strong> Pay-as-you-go pricing models reduce infrastructure costs.</li>
+        <li><strong>Collaboration:</strong> Cloud-based tools facilitate collaboration between development and operations teams.</li>
+        <li><strong>Reliability:</strong> Cloud platforms offer high availability and disaster recovery options.</li>
+      </ul>
+
+      <h2>4. Key Cloud Services for DevOps</h2>
+      <p>
+        Several cloud services are essential for implementing DevOps practices:
+      </p>
+      <ul>
+        <li><strong>Compute Services:</strong> AWS EC2, Google Compute Engine, Azure Virtual Machines.</li>
+        <li><strong>Containerization:</strong> Docker, Kubernetes, AWS ECS, Google Kubernetes Engine (GKE).</li>
+        <li><strong>CI/CD Tools:</strong> Jenkins, GitLab CI, CircleCI, AWS CodePipeline.</li>
+        <li><strong>Monitoring and Logging:</strong> Prometheus, Grafana, AWS CloudWatch, Google Stackdriver.</li>
+      </ul>
+
+      <h2>5. Implementing DevOps in the Cloud</h2>
+      <p>
+        Here are the steps to implement DevOps practices in a cloud environment:
+      </p>
+      <ol>
+        <li><strong>Infrastructure as Code (IaC):</strong> Use tools like Terraform or AWS CloudFormation to automate infrastructure provisioning.</li>
+        <li><strong>Continuous Integration:</strong> Set up CI pipelines to automatically build and test code changes.</li>
+        <li><strong>Continuous Delivery:</strong> Automate the deployment process to ensure rapid and reliable releases.</li>
+        <li><strong>Monitoring and Feedback:</strong> Implement monitoring tools to track performance and gather feedback for continuous improvement.</li>
+      </ol>
+
+      <h2>6. Best Practices for Cloud DevOps</h2>
+      <ul>
+        <li><strong>Start Small:</strong> Begin with a pilot project to test and refine your DevOps processes.</li>
+        <li><strong>Collaborate:</strong> Foster a culture of collaboration between development and operations teams.</li>
+        <li><strong>Automate Everything:</strong> Automate repetitive tasks to improve efficiency and reduce errors.</li>
+        <li><strong>Monitor Continuously:</strong> Use monitoring tools to detect and resolve issues proactively.</li>
+        <li><strong>Stay Updated:</strong> Keep up with the latest trends and tools in cloud computing and DevOps.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Integrating cloud computing with DevOps practices offers numerous benefits, including scalability, efficiency, and reliability. By leveraging cloud services and adopting DevOps principles, organizations can accelerate their software delivery processes and stay competitive in today's fast-paced digital landscape. Start your cloud DevOps journey today and unlock the full potential of your development and operations teams.
+      </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% block title %}Data & Analytics{% endblock %}
+{% load static %}
+{% block content %}
+<style>
+     :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-bg: #112240;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Dark mode */
+      body[data-theme="dark"] {
+        background-color: #0a192f;
+        color: #ccd6f6;
+      }
+
+      /* Update other elements for dark mode */
+      body[data-theme="dark"] .blog-container {
+        background-color: #112240;
+        color: #ccd6f6;
+      }
+
+      body[data-theme="dark"] .blog-header h1 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] .blog-content h2 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a:hover {
+        color: #ff6b6b;
+      }
+
+      body[data-theme="dark"] .home-button {
+        background-color: #64ffda;
+        color: #0a192f;
+      }
+
+      body[data-theme="dark"] .home-button:hover {
+        background-color: #ff6b6b;
+      }
+      body[data-theme="dark"] .blog-content{
+        color: white;
+      }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #2a2a2a;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2a5c82;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .blog-header h1 {
+      font-size: 2.5rem;
+      color: #2a5c82;
+      margin-bottom: 10px;
+    }
+    .blog-header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .blog-content {
+      font-size: 1.1rem;
+      color: #000000;
+    }
+
+    .blog-content h2 {
+      font-size: 1.8rem;
+      color: #2a5c82;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .blog-content p {
+      margin-bottom: 20px;
+    }
+    .blog-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .blog-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #2a5c82;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .home-button:hover {
+      background: #1e4565;
+    }
+
+    @media (max-width: 768px) {
+      .blog-container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .blog-header h1 {
+        font-size: 2rem;
+      }
+
+      .blog-image {
+        height: 250px;
+      }
+
+      .home-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <a href="/home" class="home-button">Home</a>
+
+  <div class="blog-container">
+    <div class="blog-header">
+      <h1>Data Analytics in Big Data</h1>
+      <p>Published on October 10, 2023 | By Musabbir</p>
+    </div>
+
+    <img src="{% static 'data.png' %}" alt="Data Analytics in Big Data" class="blog-image" style="width: 600px; height: 400px;" />
+
+    <div class="blog-content">
+      <h2>Introduction</h2>
+      <p>
+        In today's data-driven world, organizations are generating and collecting vast amounts of data. However, the real value lies in analyzing this data to uncover actionable insights. Big data analytics involves examining large and complex datasets to identify patterns, trends, and correlations that can drive smarter business decisions. In this blog, we'll explore the techniques and tools used in big data analytics.
+      </p>
+
+      <h2>1. What is Big Data Analytics?</h2>
+      <p>
+        Big data analytics refers to the process of collecting, processing, and analyzing large datasets to extract meaningful insights. It involves using advanced techniques and tools to handle the volume, velocity, and variety of big data.
+      </p>
+
+      <h2>2. Key Techniques in Big Data Analytics</h2>
+      <ul>
+        <li><strong>Descriptive Analytics:</strong> Summarizes historical data to understand what has happened.</li>
+        <li><strong>Diagnostic Analytics:</strong> Analyzes data to determine why something happened.</li>
+        <li><strong>Predictive Analytics:</strong> Uses statistical models and machine learning to forecast future outcomes.</li>
+        <li><strong>Prescriptive Analytics:</strong> Recommends actions based on data analysis to achieve desired outcomes.</li>
+      </ul>
+
+      <h2>3. Tools for Big Data Analytics</h2>
+      <p>
+        Several tools and technologies are essential for big data analytics:
+      </p>
+      <ul>
+        <li><strong>Hadoop:</strong> An open-source framework for distributed storage and processing of large datasets.</li>
+        <li><strong>Spark:</strong> A fast and general-purpose cluster computing system for big data processing.</li>
+        <li><strong>NoSQL Databases:</strong> MongoDB, Cassandra, and HBase for handling unstructured data.</li>
+        <li><strong>Data Visualization:</strong> Tools like Tableau, Power BI, and D3.js for creating interactive visualizations.</li>
+      </ul>
+
+      <h2>4. Steps in the Big Data Analytics Process</h2>
+      <ol>
+        <li><strong>Data Collection:</strong> Gather data from various sources, including sensors, social media, and transaction records.</li>
+        <li><strong>Data Storage:</strong> Store data in scalable and efficient storage systems like Hadoop Distributed File System (HDFS).</li>
+        <li><strong>Data Processing:</strong> Clean, transform, and process data to prepare it for analysis.</li>
+        <li><strong>Data Analysis:</strong> Apply analytical techniques to extract insights from the data.</li>
+        <li><strong>Data Visualization:</strong> Present the results in a clear and understandable format using charts, graphs, and dashboards.</li>
+      </ol>
+
+      <h2>5. Applications of Big Data Analytics</h2>
+      <p>
+        Big data analytics is used across various industries to drive decision-making and innovation:
+      </p>
+      <ul>
+        <li><strong>Healthcare:</strong> Analyzing patient data to improve diagnosis and treatment.</li>
+        <li><strong>Retail:</strong> Understanding customer behavior to optimize marketing strategies.</li>
+        <li><strong>Finance:</strong> Detecting fraudulent transactions and managing risk.</li>
+        <li><strong>Manufacturing:</strong> Monitoring equipment performance to predict maintenance needs.</li>
+      </ul>
+
+      <h2>6. Challenges in Big Data Analytics</h2>
+      <ul>
+        <li><strong>Data Quality:</strong> Ensuring the accuracy and completeness of data.</li>
+        <li><strong>Data Security:</strong> Protecting sensitive data from breaches and unauthorized access.</li>
+        <li><strong>Scalability:</strong> Handling the increasing volume and complexity of data.</li>
+        <li><strong>Skill Gap:</strong> Finding skilled professionals who can work with big data technologies.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Big data analytics is a powerful tool for uncovering insights and driving smarter decisions. By leveraging advanced techniques and tools, organizations can transform raw data into actionable intelligence. As the volume of data continues to grow, the importance of big data analytics will only increase. Start your big data journey today and unlock the potential of your data.
+      </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block title %}Blogs{% endblock %}
+{% load static %}
+{% block content %}
+<style>
+    :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-bg: #112240;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+    }
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-content {
+      padding: 1.5rem;
+    }
+    .blog-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .blog-content p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .read-more {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+    .read-more:hover {
+      background: #ff6b6b;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #8892b0;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <header>
+    <div class="container">
+      <h1>OmniCipher Blog</h1>
+      <p>Insights, trends, and deep dives into cybersecurity, AI, full-stack development, and more.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="blog-grid">
+      <article class="blog-card">
+        <img src="{% static 'cybersecuirty.jpg' %}" alt="Blog 1" class="blog-image">
+        <div class="blog-content">
+          <h3>Understanding AI in Cybersecurity</h3>
+          <p>Discover how artificial intelligence is transforming threat detection and response in today's digital landscape.</p>
+          <a href="/blog1" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'fullstack.png' %}" alt="Blog 2" class="blog-image">
+        <div class="blog-content">
+          <h3>Full-Stack Development Trends 2025</h3>
+          <p>Explore the upcoming trends in full-stack development and how modern frameworks are reshaping the industry.</p>
+          <a href="/blog2" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'ethical.jpg' %}" alt="Blog 3" class="blog-image">
+        <div class="blog-content">
+          <h3>Ethical Hacking: Best Practices</h3>
+          <p>Learn about the latest ethical hacking techniques and how to protect your systems from emerging threats.</p>
+          <a href="/blog3" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'machinlearning.png' %}" alt="Blog 4" class="blog-image">
+        <div class="blog-content">
+          <h3>Machine Learning: A Practical Guide</h3>
+          <p>Dive into the practical aspects of machine learning implementation, from data preprocessing to model deployment.</p>
+          <a href="/blog4" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'smartphone.png' %}" alt="Blog 5" class="blog-image">
+        <div class="blog-content">
+          <h3>Securing Mobile Applications</h3>
+          <p>Understand the critical steps required to build mobile apps that ensure user privacy and robust security.</p>
+          <a href="/blog5" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'cloud.jpg' %}" alt="Blog 6" class="blog-image">
+        <div class="blog-content">
+          <h3>Cloud Solutions & DevOps Best Practices</h3>
+          <p>Learn how integrating cloud computing with DevOps can drive efficiency and scalability in your projects.</p>
+          <a href="/blog6" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'data.png' %}" alt="Blog 7" class="blog-image">
+        <div class="blog-content">
+          <h3>Data Analytics in the Era of Big Data</h3>
+          <p>Uncover how big data analytics is revolutionizing decision-making and transforming business strategies.</p>
+          <a href="/blog7" class="read-more">Read More</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="{% static 'iot.png' %}" alt="Blog 8" class="blog-image">
+        <div class="blog-content">
+          <h3>IoT Integration: The Future of Smart Devices</h3>
+          <p>Explore the innovative ways IoT is being integrated into smart devices to create connected, efficient ecosystems.</p>
+          <a href="/blog8" class="read-more">Read More</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OmniCipher. All rights reserved.</p>
+    </div>
+  </footer>
+{% endblock %}

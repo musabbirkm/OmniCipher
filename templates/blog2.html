@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% block title %}Full Stack Development{% endblock %}
+{% load static %}
+{% block content %}
+<style>
+     :root {
+      --bg-color: #0a192f;
+      --text-color: #ccd6f6;
+      --accent-color: #64ffda;
+      --card-bg: #112240;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Dark mode */
+      body[data-theme="dark"] {
+        background-color: #0a192f;
+        color: #ccd6f6;
+      }
+
+      /* Update other elements for dark mode */
+      body[data-theme="dark"] .blog-container {
+        background-color: #112240;
+        color: #ccd6f6;
+      }
+
+      body[data-theme="dark"] .blog-header h1 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] .blog-content h2 {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a {
+        color: #64ffda;
+      }
+
+      body[data-theme="dark"] a:hover {
+        color: #ff6b6b;
+      }
+
+      body[data-theme="dark"] .home-button {
+        background-color: #64ffda;
+        color: #0a192f;
+      }
+
+      body[data-theme="dark"] .home-button:hover {
+        background-color: #ff6b6b;
+      }
+      body[data-theme="dark"] .blog-content{
+        color: white;
+      }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #2a2a2a;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2a5c82;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .blog-header h1 {
+      font-size: 2.5rem;
+      color: #2a5c82;
+      margin-bottom: 10px;
+    }
+    .blog-header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .blog-content {
+      font-size: 1.1rem;
+      color: #000000;
+    }
+
+    .blog-content h2 {
+      font-size: 1.8rem;
+      color: #2a5c82;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .blog-content p {
+      margin-bottom: 20px;
+    }
+    .blog-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .blog-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #2a5c82;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .home-button:hover {
+      background: #1e4565;
+    }
+
+    @media (max-width: 768px) {
+      .blog-container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .blog-header h1 {
+        font-size: 2rem;
+      }
+
+      .blog-image {
+        height: 250px;
+      }
+
+      .home-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+
+  <a href="/home" class="home-button">Home</a>
+
+  <div class="blog-container">
+    <div class="blog-header">
+      <h1>Full-Stack Development Trends</h1>
+      <p>Published on October 10, 2023 | By Musabbir</p>
+    </div>
+
+    <img src="{% static 'fullstack.png' %}" alt="Full-Stack Development Trends" class="blog-image" style="width: 600px; height: 400px;" />
+
+    <div class="blog-content">
+      <h2>Introduction</h2>
+      <p>
+        Full-stack development has evolved significantly over the years, driven by advancements in technology and changing industry demands. Today, full-stack developers are expected to master a wide range of tools, frameworks, and technologies to build scalable, efficient, and user-friendly applications. In this blog, we'll explore the latest trends shaping the future of full-stack development.
+      </p>
+
+      <h2>1. The Rise of JavaScript Frameworks</h2>
+      <p>
+        JavaScript continues to dominate the full-stack development landscape. Frameworks like <strong>React</strong>, <strong>Angular</strong>, and <strong>Vue.js</strong> are widely used for front-end development, while <strong>Node.js</strong> has become the go-to choice for back-end development. The ability to use a single language across the entire stack has made JavaScript a favorite among developers.
+      </p>
+      <h2>2. Serverless Architecture</h2>
+      <p>
+        Serverless computing is gaining traction as it allows developers to focus on writing code without worrying about server management. Platforms like <strong>AWS Lambda</strong>, <strong>Google Cloud Functions</strong>, and <strong>Azure Functions</strong> enable developers to build scalable applications with minimal infrastructure overhead.
+      </p>
+      <h2>3. Microservices Architecture</h2>
+      <p>
+        Microservices have replaced monolithic architectures in many modern applications. By breaking down applications into smaller, independent services, developers can achieve better scalability, flexibility, and maintainability. Tools like <strong>Docker</strong> and <strong>Kubernetes</strong> have made it easier to deploy and manage microservices.
+      </p>
+      <h2>4. Progressive Web Apps (PWAs)</h2>
+      <p>
+        Progressive Web Apps combine the best of web and mobile applications, offering offline capabilities, fast loading times, and a native app-like experience. PWAs are becoming increasingly popular as they provide a seamless user experience across devices.
+      </p>
+      <h2>5. AI and Machine Learning Integration</h2>
+      <p>
+        AI and machine learning are being integrated into full-stack applications to provide personalized user experiences and automate complex tasks. Libraries like <strong>TensorFlow.js</strong> make it easier for developers to incorporate AI into their applications.
+      </p>
+      <h2>6. Low-Code and No-Code Platforms</h2>
+      <p>
+        Low-code and no-code platforms are empowering non-developers to build applications with minimal coding knowledge. These platforms are particularly useful for rapid prototyping and building internal tools.
+      </p>
+      <h2>7. DevOps and CI/CD Pipelines</h2>
+      <p>
+        DevOps practices and Continuous Integration/Continuous Deployment (CI/CD) pipelines are becoming essential for full-stack development. Tools like <strong>Jenkins</strong>, <strong>GitLab CI</strong>, and <strong>GitHub Actions</strong> streamline the development and deployment process.
+      </p>
+      <h2>Conclusion</h2>
+      <p>
+        Full-stack development is constantly evolving, with new trends and technologies emerging every year. By staying updated with these trends, developers can build cutting-edge applications that meet the demands of modern users. Whether it's adopting serverless architecture, integrating AI, or embracing low-code platforms, the future of full-stack development is full of exciting possibilities.
+      </p>
+    </div>
+  </div>
+{% endblock %}
