@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: PortFolio
+    runtime: python
+    buildCommand: |
+      pip install django gunicorn whitenoise psycopg2-binary
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn your_project.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: OmniCipher.onrender.com
