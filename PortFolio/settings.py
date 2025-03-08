@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s=n-569c-3=c6#qw(&u_2!=8bi==*8s8s^yo5*5)o)m!vg1(58
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["OmniCipher.onrender.com"]
 
 
 # Application definition
