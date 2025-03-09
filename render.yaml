@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: PortFolio
+    name: OmniCipher
     runtime: python
-    buildCommand: |
-      pip install django gunicorn whitenoise psycopg2-binary
-      python manage.py collectstatic --noinput
-    startCommand: gunicorn your_project.wsgi:application
+    repo: https://github.com/musabbirkm/OmniCipher
+    buildCommand: pip install django gunicorn whitenoise psycopg2-binary && python manage.py
+              collectstatic --noinput
+    startCommand: gunicorn PortFolio.wsgi:application
+    rootDir: ./
     envVars:
       - key: SECRET_KEY
         value: "django-insecure-s=n-569c-3=c6#qw(&u_2!=8bi==*8s8s^yo5*5)o)m!vg1(58"
@@ -13,3 +14,5 @@ services:
         value: False
       - key: ALLOWED_HOSTS
         value: OmniCipher.onrender.com
+
+    version: "1"
